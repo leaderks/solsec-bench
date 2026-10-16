@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem in the harness
+    url: https://github.com/leaderks/solsec-bench/security/advisories/new
+    about: Use private vulnerability reporting.

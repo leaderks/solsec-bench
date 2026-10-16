@@ -1,0 +1,13 @@
+id = "SSB-0002"
+title = "Treasury payout trusts a config account it does not own"
+class = "missing-owner-check"
+severity = "critical"
+framework = "native"
+origin = "synthetic"
+added = "2026-10-16"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "process_instruction"
+summary = "The admin is read from the config account without checking `config.owner == program_id`, so an attacker can pass a forged config naming themself."

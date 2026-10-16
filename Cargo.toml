@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["cases/*"]
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/leaderks/solsec-bench"
+publish = false
+
+[workspace.dependencies]
+solana-program = "5.1"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }

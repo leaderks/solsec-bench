@@ -1,0 +1,18 @@
+name: Report a problem
+description: A wrong case, a weak test, or a harness bug
+labels: ["bug"]
+body:
+  - type: input
+    id: case
+    attributes:
+      label: Case id or component
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
