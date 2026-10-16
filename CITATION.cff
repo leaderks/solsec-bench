@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use SolSec Bench in your research, please cite it as below."
+title: "SolSec Bench: an open security benchmark for AI on Solana"
+authors:
+  - family-names: Kamsu
+    given-names: Salomon
+repository-code: "https://github.com/leaderks/solsec-bench"
+license: Apache-2.0
+version: 0.1.0
+date-released: 2026-10-16

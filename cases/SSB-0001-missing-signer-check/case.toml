@@ -1,0 +1,13 @@
+id = "SSB-0001"
+title = "Vault withdraw does not require the authority to sign"
+class = "missing-signer-check"
+severity = "critical"
+framework = "native"
+origin = "synthetic"
+added = "2026-10-16"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "process_instruction"
+summary = "The authority account is compared to the stored address but `is_signer` is never checked, so anyone can name the authority and withdraw."

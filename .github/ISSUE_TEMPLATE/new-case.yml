@@ -1,0 +1,33 @@
+name: Propose a case
+description: Suggest a vulnerability to add to the benchmark
+labels: ["case"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Only propose synthetic vulnerabilities or incidents that are already
+        public and fixed. Never describe an unfixed bug in a live program here.
+  - type: input
+    id: class
+    attributes:
+      label: Vulnerability class
+      description: See docs/taxonomy.md
+    validations:
+      required: true
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Origin
+      options: ["synthetic", "public and fixed incident"]
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Public post-mortem link (incidents only)
+  - type: textarea
+    id: description
+    attributes:
+      label: What goes wrong and how it is exploited
+    validations:
+      required: true
