@@ -12,3 +12,4 @@ All notable changes to this project are documented here. The format follows
 - SSB-0001 missing signer check and SSB-0002 missing owner check.
 - Python harness to list and verify cases, render task prompts and score answers.
 - Continuous integration for Rust (fmt, clippy, tests) and Python (ruff, pytest, case verification).
+- ADOPTION.md to track third-party evaluations, external cases and integrations.
