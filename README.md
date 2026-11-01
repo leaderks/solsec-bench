@@ -14,22 +14,20 @@ so every score is checked by running code, not by reading prose.
 
 ## Why
 
-In the past year Ethereum received three public benchmarks for AI on smart
-contract security: [EVMbench](https://openai.com/index/introducing-evmbench/)
-(OpenAI and Paradigm), [SCONE-bench](https://github.com/anthropics/scone-bench)
-(Anthropic) and [CyberChainBench](https://arxiv.org/abs/2606.26216). None of
-them covers Solana. On EVMbench, frontier agents already succeed at 71% of
-exploit tasks. Nobody knows the equivalent number for Solana.
+More and more Solana code is written or reviewed with the help of AI models,
+and many small teams run an automated scanner before an audit, or instead of
+one. Nobody can yet say how well these models and tools handle Solana's own
+failure modes, because no public benchmark tests them by running code.
 
-That gap matters because Solana's vulnerabilities are different. Programs
-receive every account from the caller, so most critical bugs are missing
-checks on those accounts: signer, owner, type, PDA derivation, cross-program
-invocation targets. Application bugs caused 26 of 38 major Solana incidents
-from 2020 to Q1 2025 ([Helius](https://www.helius.dev/blog/solana-hacks)), and
-Solana has about 12 security analysis tools against 113 for Ethereum
-([Wu et al., 2025](https://arxiv.org/abs/2504.07419)). Existing Solana
-datasets are teaching examples, text-only descriptions, or vendor datasets that
-score the vendor's own model.
+Those failure modes are specific. Programs receive every account from the
+caller, so most critical bugs are missing checks on those accounts: signer,
+owner, type, PDA derivation, cross-program invocation targets. Application bugs
+caused 26 of 38 major Solana incidents from 2020 to Q1 2025
+([Helius](https://www.helius.dev/blog/solana-hacks)), and a 2025 survey counted
+about 12 security analysis tools for Solana
+([Wu et al., 2025](https://arxiv.org/abs/2504.07419)). Existing Solana datasets
+are teaching examples, text-only descriptions, or vendor datasets that score
+the vendor's own model.
 
 SolSec Bench aims to be the neutral, executable reference for Solana.
 
@@ -39,7 +37,7 @@ Early stage, version 0.1.
 
 | Area | Today | Next |
 | --- | --- | --- |
-| Cases | 2 synthetic cases | 40 cases, including replayed real incidents |
+| Cases | 3 synthetic cases | 40 cases, including replayed real incidents |
 | Execution | Program entrypoint called natively in Rust tests | Compiled SBF programs on [LiteSVM](https://github.com/LiteSVM/litesvm), mainnet state via Surfpool |
 | Frameworks | Native `solana-program` | Anchor and Pinocchio |
 | Evaluation | Prompts and automatic scoring for the 3 tasks | Model adapters, sandboxed runs, public leaderboard |
@@ -52,6 +50,7 @@ See [docs/roadmap.md](docs/roadmap.md).
 | --- | --- | --- | --- |
 | [SSB-0001](cases/SSB-0001-missing-signer-check) | missing-signer-check | critical | Vault withdraw does not require the authority to sign |
 | [SSB-0002](cases/SSB-0002-missing-owner-check) | missing-owner-check | critical | Treasury payout trusts a config account it does not own |
+| [SSB-0003](cases/SSB-0003-account-type-confusion) | account-type-confusion | critical | Treasury payout accepts a user profile as its config |
 
 ## How it works
 

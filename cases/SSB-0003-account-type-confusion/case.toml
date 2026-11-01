@@ -1,0 +1,13 @@
+id = "SSB-0003"
+title = "Treasury payout accepts a user profile as its config"
+class = "account-type-confusion"
+severity = "critical"
+framework = "native"
+origin = "synthetic"
+added = "2026-11-01"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "payout"
+summary = "Config and profile accounts share the same layout and owner. Payout checks the owner and the length of the config account but not its type tag, so anyone can register a profile naming themself and pass it as the config."
