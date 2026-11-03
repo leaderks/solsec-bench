@@ -1385,21 +1385,42 @@ dependencies = [
 ]
 
 [[package]]
-name = "ssb-0001-missing-signer-check"
+name = "ssb-0001"
 version = "0.1.0"
 dependencies = [
  "solana-program",
 ]
 
 [[package]]
-name = "ssb-0002-missing-owner-check"
+name = "ssb-0002"
 version = "0.1.0"
 dependencies = [
  "solana-program",
 ]
 
 [[package]]
-name = "ssb-0003-account-type-confusion"
+name = "ssb-0003"
+version = "0.1.0"
+dependencies = [
+ "solana-program",
+]
+
+[[package]]
+name = "ssb-0004"
+version = "0.1.0"
+dependencies = [
+ "solana-program",
+]
+
+[[package]]
+name = "ssb-0005"
+version = "0.1.0"
+dependencies = [
+ "solana-program",
+]
+
+[[package]]
+name = "ssb-0006"
 version = "0.1.0"
 dependencies = [
  "solana-program",

@@ -6,6 +6,11 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- Case crates are named after the case id only (`ssb-NNNN`), so crate names no longer hint at the vulnerability class.
+- The exploit prompt now gives the crate name to import.
+
 ### Added
 
 - Case format: vulnerable program, reference fix, functional tests and an executable exploit test per case.
@@ -13,4 +18,7 @@ All notable changes to this project are documented here. The format follows
 - Python harness to list and verify cases, render task prompts and score answers.
 - Continuous integration for Rust (fmt, clippy, tests) and Python (ruff, pytest, case verification).
 - SSB-0003 account type confusion: a user profile accepted where the config is expected.
+- SSB-0004 PDA not re-derived: any signer can withdraw from another user's vault.
+- SSB-0005 reinitialization: a funded vault can be initialized again with a new authority.
+- SSB-0006 improper account closing: a closed ticket is revived in the same transaction and redeemed twice.
 - ADOPTION.md to track third-party evaluations, external cases and integrations.

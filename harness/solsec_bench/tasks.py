@@ -44,7 +44,11 @@ def _file_block(name: str, text: str) -> str:
 def render(case: Case, task: str) -> str:
     if task not in TASKS:
         raise ValueError(f"unknown task {task!r}, expected one of {TASKS}")
-    parts = [_INTRO, _INSTRUCTIONS[task], "\n"]
+    parts = [_INTRO, _INSTRUCTIONS[task]]
+    if task == "exploit":
+        crate = "ssb_" + case.id.split("-")[1]
+        parts.append(f"The program crate is imported as `{crate}`.\n")
+    parts.append("\n")
     parts.append(_file_block("src/lib.rs", (case.path / "src" / "lib.rs").read_text()))
     parts.append(_file_block("src/vulnerable.rs", case.vulnerable_source.read_text()))
     if task == "exploit":

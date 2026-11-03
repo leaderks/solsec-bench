@@ -5,7 +5,7 @@ mod common;
 
 use common::{blank_profile, world, TestAccount, TREASURY_BALANCE};
 use solana_program::pubkey::Pubkey;
-use ssb_0003_account_type_confusion::{
+use ssb_0003::{
     account_data, payout_data, process_instruction, register_data, TAG_CONFIG, TAG_PROFILE,
 };
 

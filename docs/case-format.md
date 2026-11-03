@@ -38,7 +38,7 @@ summary = "What is wrong and how it is exploited."
 - **Minimal fix.** `fixed.rs` should differ from `vulnerable.rs` only where the
   bug is, so the diff documents the vulnerability.
 - **Same public API.** Tests and prompts depend on `src/lib.rs` only.
-- **Realistic code.** No comments or names that point at the bug.
+- **Realistic code.** No comments or names that point at the bug. The crate is named after the case id only (`ssb-NNNN`), because test helpers are shown to the model in the exploit task.
 - **Strong functional tests.** They must fail on a "fix" that simply rejects
   every call.
 - **Incidents** must be public and fixed, with the post-mortem linked in

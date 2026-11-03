@@ -1,7 +1,7 @@
 #![allow(dead_code)]
 
 use solana_program::{account_info::AccountInfo, pubkey::Pubkey};
-use ssb_0003_account_type_confusion::{account_data, ACCOUNT_LEN, TAG_CONFIG};
+use ssb_0003::{account_data, ACCOUNT_LEN, TAG_CONFIG};
 
 /// Owned storage for one account, so tests can build `AccountInfo` views.
 pub struct TestAccount {
