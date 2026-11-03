@@ -37,9 +37,9 @@ Early stage, version 0.1.
 
 | Area | Today | Next |
 | --- | --- | --- |
-| Cases | 6 synthetic cases | 40 cases, including replayed real incidents |
+| Cases | 8 synthetic cases | 40 cases, including replayed real incidents |
 | Execution | Program entrypoint called natively in Rust tests | Compiled SBF programs on [LiteSVM](https://github.com/LiteSVM/litesvm), mainnet state via Surfpool |
-| Frameworks | Native `solana-program` | Anchor and Pinocchio |
+| Frameworks | Native `solana-program`, Anchor (1 case) | More Anchor cases, Pinocchio |
 | Evaluation | Prompts and automatic scoring for the 3 tasks | Model adapters, sandboxed runs, public leaderboard |
 
 See [docs/roadmap.md](docs/roadmap.md).
@@ -54,6 +54,8 @@ See [docs/roadmap.md](docs/roadmap.md).
 | [SSB-0004](cases/SSB-0004-pda-not-rederived) | pda-misuse | critical | Vault withdraw never re-derives the vault address from its owner |
 | [SSB-0005](cases/SSB-0005-vault-reinitialization) | reinitialization | critical | Vault initialize can be called again to replace the authority |
 | [SSB-0006](cases/SSB-0006-ticket-closed-without-wiping) | improper-account-closing | high | Prize ticket is closed without wiping its data and can be redeemed twice |
+| [SSB-0007](cases/SSB-0007-self-transfer-duplicates-balance) | duplicate-mutable-accounts | critical | Ledger transfer to the same account creates balance out of nothing |
+| [SSB-0008](cases/SSB-0008-anchor-missing-has-one) | missing-authority-check | critical | Anchor vault withdraw does not tie the signer to the vault authority |
 
 ## How it works
 

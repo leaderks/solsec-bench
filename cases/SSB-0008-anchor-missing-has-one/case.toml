@@ -1,0 +1,13 @@
+id = "SSB-0008"
+title = "Anchor vault withdraw does not tie the signer to the vault authority"
+class = "missing-authority-check"
+severity = "critical"
+framework = "anchor"
+origin = "synthetic"
+added = "2026-11-03"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "withdraw"
+summary = "The Withdraw accounts require a signer but have no `has_one = authority` constraint on the vault, so any signer can withdraw from any vault."

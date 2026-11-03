@@ -21,4 +21,8 @@ All notable changes to this project are documented here. The format follows
 - SSB-0004 PDA not re-derived: any signer can withdraw from another user's vault.
 - SSB-0005 reinitialization: a funded vault can be initialized again with a new authority.
 - SSB-0006 improper account closing: a closed ticket is revived in the same transaction and redeemed twice.
+- SSB-0007 duplicate mutable accounts: a ledger transfer to itself doubles the balance.
+- SSB-0008, first Anchor case: a vault withdraw without `has_one = authority`.
+- `missing-authority-check` class in the taxonomy.
+- Exploit prompts name the right entry point for Anchor programs (`entry`).
 - ADOPTION.md to track third-party evaluations, external cases and integrations.
