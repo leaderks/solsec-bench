@@ -1,0 +1,13 @@
+id = "SSB-0006"
+title = "Prize ticket is closed without wiping its data and can be redeemed twice"
+class = "improper-account-closing"
+severity = "high"
+framework = "native"
+origin = "synthetic"
+added = "2026-11-03"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "process_instruction"
+summary = "Redeem closes the ticket by moving its lamports out but leaves its data marked as valid. Within the same transaction the holder can send lamports back to the ticket, which then survives and can be redeemed again."

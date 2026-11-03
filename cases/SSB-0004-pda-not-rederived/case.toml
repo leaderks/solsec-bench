@@ -1,0 +1,13 @@
+id = "SSB-0004"
+title = "Vault withdraw never re-derives the vault address from its owner"
+class = "pda-misuse"
+severity = "critical"
+framework = "native"
+origin = "synthetic"
+added = "2026-11-03"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "process_instruction"
+summary = "Each user's vault is meant to be the PDA derived from [\"vault\", owner], but withdraw only checks that the vault is owned by the program and that some owner signed. It never re-derives the PDA from the signer, so any user can withdraw from anyone's vault."

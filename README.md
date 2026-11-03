@@ -37,7 +37,7 @@ Early stage, version 0.1.
 
 | Area | Today | Next |
 | --- | --- | --- |
-| Cases | 3 synthetic cases | 40 cases, including replayed real incidents |
+| Cases | 6 synthetic cases | 40 cases, including replayed real incidents |
 | Execution | Program entrypoint called natively in Rust tests | Compiled SBF programs on [LiteSVM](https://github.com/LiteSVM/litesvm), mainnet state via Surfpool |
 | Frameworks | Native `solana-program` | Anchor and Pinocchio |
 | Evaluation | Prompts and automatic scoring for the 3 tasks | Model adapters, sandboxed runs, public leaderboard |
@@ -51,6 +51,9 @@ See [docs/roadmap.md](docs/roadmap.md).
 | [SSB-0001](cases/SSB-0001-missing-signer-check) | missing-signer-check | critical | Vault withdraw does not require the authority to sign |
 | [SSB-0002](cases/SSB-0002-missing-owner-check) | missing-owner-check | critical | Treasury payout trusts a config account it does not own |
 | [SSB-0003](cases/SSB-0003-account-type-confusion) | account-type-confusion | critical | Treasury payout accepts a user profile as its config |
+| [SSB-0004](cases/SSB-0004-pda-not-rederived) | pda-misuse | critical | Vault withdraw never re-derives the vault address from its owner |
+| [SSB-0005](cases/SSB-0005-vault-reinitialization) | reinitialization | critical | Vault initialize can be called again to replace the authority |
+| [SSB-0006](cases/SSB-0006-ticket-closed-without-wiping) | improper-account-closing | high | Prize ticket is closed without wiping its data and can be redeemed twice |
 
 ## How it works
 
