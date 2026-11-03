@@ -1,0 +1,13 @@
+id = "SSB-0005"
+title = "Vault initialize can be called again to replace the authority"
+class = "reinitialization"
+severity = "critical"
+framework = "native"
+origin = "synthetic"
+added = "2026-11-03"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "initialize"
+summary = "Initialize writes the authority into the vault without checking that the vault is still uninitialized, so anyone can call it on a funded vault, name themself as authority and then withdraw."

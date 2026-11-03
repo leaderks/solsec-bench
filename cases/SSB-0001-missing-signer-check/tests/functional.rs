@@ -5,7 +5,7 @@ mod common;
 
 use common::{world, TestAccount, VAULT_BALANCE};
 use solana_program::pubkey::Pubkey;
-use ssb_0001_missing_signer_check::{process_instruction, withdraw_data};
+use ssb_0001::{process_instruction, withdraw_data};
 
 #[test]
 fn authority_can_withdraw() {

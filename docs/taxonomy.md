@@ -6,6 +6,7 @@ kebab-case and used as `class` in `case.toml`.
 | Class | Description |
 | --- | --- |
 | missing-signer-check | An account that must authorize the action is not required to sign |
+| missing-authority-check | A signer is required but never compared with the authority recorded in the account |
 | missing-owner-check | Account data is trusted without checking which program owns the account |
 | account-type-confusion | An account of one type is accepted where another type is expected |
 | arbitrary-cpi | The program invokes a program id supplied by the caller without checking it |

@@ -5,7 +5,7 @@ def test_discovers_cases_with_metadata():
     found = cases.discover()
     ids = [c.id for c in found]
     assert ids == sorted(ids)
-    assert {"SSB-0001", "SSB-0002"} <= set(ids)
+    assert {f"SSB-000{i}" for i in range(1, 9)} <= set(ids)
     for case in found:
         assert case.vulnerable_source.is_file()
         assert case.fixed_source.is_file()

@@ -5,7 +5,7 @@ mod common;
 
 use common::{world, TestAccount, TREASURY_BALANCE};
 use solana_program::pubkey::Pubkey;
-use ssb_0002_missing_owner_check::{payout_data, process_instruction};
+use ssb_0002::{payout_data, process_instruction};
 
 #[test]
 fn admin_can_pay_out() {

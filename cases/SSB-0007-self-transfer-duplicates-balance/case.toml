@@ -1,0 +1,13 @@
+id = "SSB-0007"
+title = "Ledger transfer to the same account creates balance out of nothing"
+class = "duplicate-mutable-accounts"
+severity = "critical"
+framework = "native"
+origin = "synthetic"
+added = "2026-11-03"
+
+# Ground truth, hidden from the model under evaluation.
+[ground_truth]
+file = "src/vulnerable.rs"
+function = "process_instruction"
+summary = "Transfer reads both balances, then writes the sender's and the recipient's new balances in turn. When the same ledger is passed as sender and recipient, the second write wins and the balance grows by the amount on every call."
